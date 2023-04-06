@@ -1,0 +1,906 @@
+#!/bin/bash
+
+greenColour="\e[0;32m\033[1m"
+endColour="\033[0m\e[0m"
+redColour="\e[0;31m\033[1m"
+blueColour="\e[0;34m\033[1m"
+yellowColour="\e[1;33m\033[1m"
+purpleColour="\e[0;35m\033[1m"
+turquoiseColour="\e[0;36m\033[1m"
+grayColour="\e[0;37m\033[1m"
+brownColour="\e[0;33m\033[1m"
+darkgrayColour="\e[1;30m\033[1m"
+lightblueColour="\e[1;34m\033[1m"
+lightgreenColour="\e[1;32m\033[1m"
+lightredColour="\e[1;31m\033[1m"
+lightpurpleColour="\e[1;35m\033[1m"
+lightturquoiseColour="\e[1;36m\033[1m"
+whiteColour="\e[1;37m\033[1m"
+blackColour="\e[0;30m\033[1m"
+
+#banner
+echo -e "\n"
+for i in {1..107}; do echo -ne ${grayColour}"~"${endColour}; done
+echo -e "\n"
+echo -e ${redColour}"   o-o         o-o  o   o " ${endColour}
+echo -e ${redColour}"  o   o     o o   o |\  | " ${endColour}
+echo -e ${redColour}"  |   | o-o   |   | | \ | " ${endColour}
+echo -e ${redColour}"  o   o |   | o   o |  \| " ${endColour}
+echo -e ${redColour}"   o-o  o   |  o-o  o   o " ${endColour}
+echo -e "\n"                                        
+echo -e ${purpleColour} "[*] Autor       ${endColour}${grayColour}         : Cl4r4-5 " ${endColour}
+echo -e ${purpleColour} "[*] Versión      ${endColour}${grayColour}        : 1.0 " ${endColour}
+echo -e ${purpleColour} "[*] Última modificación ${endColour}${grayColour} : 2023/04/05 \n" ${endColour}
+
+# variables globales
+tick=✔
+cross=✘
+
+#panel de opciones para las herramientas instaladas
+function main_menu()
+{
+	while :
+	do
+	echo " "
+        echo -e ${grayColour}"==========================================================================================================="${endColour}
+	echo -e ${grayColour}"                                               Menú Principal                                              "${endColour}
+	echo -e ${grayColour}"==========================================================================================================="${endColour}
+	echo -e ${blueColour}"[1]""Correos"${endColour}
+		echo -e ${whiteColour}"\t[a]""Checkfy:"${endColour} "adivina posibles correos electrónicos basados en una lista de apodos."
+		echo -e ${whiteColour}"\t[b]""EO-Ripper:"${endColour} "hace OSINT a un email o a una lista de emails."
+		echo -e ${whiteColour}"\t[c]""Mailfy:"${endColour} "encuentra más información sobre los correos electrónicos."
+		echo -e ${whiteColour}"\t[d]""ProtOSINT:"${endColour} "investiga cuentas de ProtonMail y direcciones IP vinculadas a ProtonVPN."
+		echo -e ${whiteColour}"\t[e]""SpiderFoot:"${endColour} "recopila y analiza datos."
+		echo -e ${whiteColour}"\t[f]""Tinfoleak:"${endColour} "Análisis de información pública de Twitter."
+		echo -e ${whiteColour}"\t[g]""WebScrape:"${endColour} "recoge correos y números de teléfono de páginas web."
+	echo -e ${turquoiseColour}"[2]""Dominios"${endColour} 
+		echo -e ${whiteColour}"\t[h]""CloudFail:"${endColour} "encuentra IP ocultas detrás de la red CloudFlare."
+		echo -e ${whiteColour}"\t[i]""Dmitry:"${endColour} "recopila información de fuentes públicas de dominios y direcciones IP."
+		echo -e ${whiteColour}"\t[j]""DNSRecon"${endColour} "descubre información sobre hosts y redes a través de consultas de DNS."
+		echo -e ${whiteColour}"\t[k]""Domainfy:"${endColour} "encuentra dominios que se resuelven usando una palabra o apodo."
+		echo -e ${whiteColour}"\t[e]""SpiderFoot:"${endColour} "recopila y analiza datos."
+		echo -e ${whiteColour}"\t[l]""TheHarvester:"${endColour} "recolecta diversa información a través de un dominio."
+		echo -e ${whiteColour}"\t[f]""Tinfoleak:"${endColour} "Análisis de información pública de Twitter."
+	echo -e ${redColour}"[3]""Geolocalización"${endColour}
+		echo -e ${whiteColour}"\t[e]""SpiderFoot:"${endColour} "recopila y analiza datos."
+		echo -e ${whiteColour}"\t[f]""Tinfoleak:"${endColour} "Análisis de información pública de Twitter."
+	echo -e ${lightgreenColour}"[4]""Identidad"${endColour}
+		echo -e ${whiteColour}"\t[m]""Alias_generator:"${endColour} "genera apodos basados en información conocida sobre el objetivo."
+		echo -e ${whiteColour}"\t[n]""Searchfy:"${endColour} "encuentra perfiles vinculados a un nombre completo."
+		echo -e ${whiteColour}"\t[o]""Sherlock:"${endColour} "busca cuentas en gran multitud de redes sociales por nombre de usuario."
+		echo -e ${whiteColour}"\t[f]""Tinfoleak:"${endColour} "Análisis de información pública de Twitter."
+	echo -e ${yellowColour}"[5]""IP"${endColour}
+		echo -e ${whiteColour}"\t[h]""CloudFail:"${endColour} "encuentra IP ocultas detrás de la red CloudFlare."
+		echo -e ${whiteColour}"\t[i]""Dmitry:"${endColour} "recopila información de fuentes públicas de dominios y direcciones IP."
+		echo -e ${whiteColour}"\t[d]""ProtOSINT:"${endColour} "investiga cuentas de ProtonMail y direcciones IP vinculadas a ProtonVPN."
+		echo -e ${whiteColour}"\t[e]""SpiderFoot:"${endColour} "recopila y analiza datos."
+		echo -e ${whiteColour}"\t[f]""Tinfoleak:"${endColour} "Análisis de información pública de Twitter."
+	echo -e ${blueColour}"[6]""Multimedia"${endColour}
+		echo -e ${whiteColour}"\t[p]""Exiftool:"${endColour} "extrae metadatos de imágenes, archivos o documentos".
+		echo -e ${whiteColour}"\t[q]""MediaInfo:"${endColour} "extrae metadatos de archivos multimedia: áudio o vídeo."
+		echo -e ${whiteColour}"\t[f]""Tinfoleak:"${endColour} "Análisis de información pública de Twitter."
+	echo -e ${turquoiseColour}"[7]""Redes Sociales"${endColour}
+		echo -e ${whiteColour}"\t[r]""Instaloader:"${endColour} "permite descargas de cualquier dato de Instagram."			
+		echo -e ${whiteColour}"\t[e]""SpiderFoot:"${endColour} "recopila y analiza datos."
+		echo -e ${whiteColour}"\t[f]""Tinfoleak:"${endColour} "Análisis de información pública de Twitter."
+	echo -e ${redColour}"[8]""Teléfonos"${endColour}
+		echo -e ${whiteColour}"\t[s]""Phonefy:"${endColour} "recupera información sobre teléfonos móviles."
+		echo -e ${whiteColour}"\t[f]""Tinfoleak:"${endColour} "Análisis de información pública de Twitter."
+		echo -e ${whiteColour}"\t[g]""WebScrape:"${endColour} "recoge correos y números de teléfono de páginas web."
+	echo -e ${lightgreenColour}"[9]""Usuarios"${endColour}
+		echo -e ${whiteColour}"\t[m]""Alias_generator:"${endColour} "genera apodos basados en información conocida sobre el objetivo."
+		echo -e ${whiteColour}"\t[e]""SpiderFoot:"${endColour} "recopila y analiza datos."
+		echo -e ${whiteColour}"\t[o]""Sherlock:"${endColour} "busca cuentas en gran multitud de redes sociales por nombre de usuario."
+		echo -e ${whiteColour}"\t[f]""Tinfoleak:"${endColour} "Análisis de información pública de Twitter."
+		echo -e ${whiteColour}"\t[t]""Usufy:"${endColour} "identifica perfiles de redes sociales usando un apodo."
+	echo -e ${yellowColour}"[10]""Otras"${endColour}
+		echo -e ${whiteColour}"\t[u]""Elasticsearch:"${endColour} "motor de búsqueda y análisis de datos."
+		echo -e ${whiteColour}"\t[v]""Kibana:"${endColour} "visualización de datos."
+		echo -e ${whiteColour}"\t[w]""Maltego:"${endColour} "análisis de datos."
+		echo -e ${whiteColour}"\t[x]""SE Toolkit:"${endColour} "ingeniería social."
+	echo "[y] Stop/Exit"
+        echo "----------------------------------------------------------------------------------------------------------"
+	echo -e ${whiteColour}"Elija su opción [a-y]: "${endColour}
+	read m_menu
+
+	case "$m_menu" in
+
+		a) checkfy;;
+		b) eo_ripper;;
+		c) mailfy;;
+		d) protosint;;
+		e) spider;;
+		f) tinfoleak;;
+		g) webscraper;;
+		h) cloudfail;;
+		i) dmitry;;
+		j) dnsrecon;;
+		k) domainfy;;
+		l) theharvester;;
+		m) alias_generator;;
+		n) searchfy;;
+		o) sherlock;;
+		p) exiftool;;
+		q) mediainfo;;
+		r) instaloader;;
+		s) phonefy;;
+		t) usufy;;
+		u) elasticsearch;;
+		v) kibana;;
+		w) malt;;
+		x) se_toolkit;;
+		y) exit 0;;
+                *) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+done
+}
+
+
+function checkfy()
+{
+	echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${blueColour}"                            OSRFramework - Checkfy                            "${endColour}
+        echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${whiteColour}"Uso:"${endColour}
+	echo -e ${whiteColour} "checkfy.py"${endColour}" (--license | -n <usuario> [<usuario> ...] | -N <archivo_usuarios>)" 
+	echo -e "\t" "-m <patron>"
+	echo -e "\t" "[-o <ruta_carpeta_output>] [-t <tipo>][-h] [--version]"
+	echo -e ${whiteColour} "Donde '-n' y '-m' son obligatorios para ejecutar checkfy"${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'checkfy.py -n cl4r4-5 -m c******@h******.com'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${blueColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${blueColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${blueColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_checkfy
+
+	case "$m_checkfy" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+function eo_ripper()
+{
+	echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${blueColour}"                            Email Osint Ripper                                "${endColour}
+        echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	pip3 install mechanize > /dev/null 2>&1
+	pip3 install beautifulsoup4 > /dev/null 2>&1
+	pip3 install -r email-osint-ripper/requeriments.txt > /dev/null 2>&1
+	echo -e "\n"
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Listo, vamos a ello.\n"${endColour}
+	python3 email-osint-ripper/eo-ripper.py
+	
+}
+
+function mailfy()
+{
+	echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${blueColour}"                            OSRFramework - Mailfy                             "${endColour}
+        echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${whiteColour}"Uso:"${endColour}
+	echo -e ${whiteColour} "mailfy"${endColour}
+	echo -e "(--license | -m <emails> [<emails> ...] | -M <archivo_emails> | -n <usuario> [<usuario> ...] | -N <archivo_usuario> | --create-emails <archivo_usuario>)"
+        echo -e "[-e <sum_ext> [<sum_ext> ...]]"
+        echo -e "[-d <dominio> [<dominio> ...]]"
+        echo -e "[-o <ruta_del_output>]"
+        echo -e "[-p <platforma> [<platforma> ...]]"
+        echo -e "[-x <dominio> [<dominio> ...]]"
+        echo -e "[-F <fichero_de_cabecera>] [-T <num_threads>]"
+        echo -e "[--quiet] [-h] [--version]"
+	echo -e ${whiteColour} "Donde uno de los siguientes comandos es obligatorio para ejecutar mailfy: --license -m/--emails -M/--emails-file -n/--nicks -N/--nicks-file --create-emails"${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'mailfy.py -m info@campusciberseguridad.com'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${blueColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${blueColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${blueColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_mailfy
+
+	case "$m_mailfy" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+
+function protosint()
+{
+	echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${blueColour}"                                ProtOSINT                                     "${endColour}
+        echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Listo, vamos a ello.\n"${endColour}
+	python3 ProtOSINT/protosint.py
+	
+}
+
+
+function spider()
+{
+	echo -e ${redColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${redColour}"                                SpiderFoot                                    "${endColour}
+        echo -e ${redColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n" 
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Activado, vamos a ello.\n"${endColour}
+	echo -e ${grayColour} "Abre el navegador que desees y selecciona el marcador 'Spiderfoot'\n"${endColour}
+	gnome-terminal --window -- bash -c "spiderfoot -l 127.0.0.1:5001; exec bash"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${turquoiseColour}"[1] Volver al Menú Principal"${endColour}
+	echo -e ${turquoiseColour}"[2] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-2]: "${endColour}
+	read m_spider
+
+	case "$m_spider" in
+
+		1) main_menu;;
+		2) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac	
+		
+}
+
+
+function tinfoleak()
+{
+	echo -e ${redColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${redColour}"                                 Tinfoleak                                    "${endColour}
+        echo -e ${redColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n" 
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Introduce los tokens y guarda."${endColour}
+	echo -e "\n"
+	gedit tinfoleak-master/Windows-EXE/tinfoleak-EXE/tinfoleak.conf > /dev/null 2&>1
+	echo -e ${whiteColour}"¿Listo?"${endColour}
+	echo -e ${redColour}"[1] Ya los he introducido, empecemos con Tinfoleak"${endColour}
+	echo -e ${redColour}"[2] No sé como obtener los tokens"${endColour}
+	echo -e ${redColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_tinfo_conf
+
+	case "$m_tinfo_conf" in
+
+		1) wine tinfoleak-master/Windows-EXE/tinfoleak-EXE/tinfoleak.exe > /dev/null 2&>1;;
+		2) tinfo_token;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac	
+			
+}
+
+
+function tinfo_token()
+{
+	echo -e ${redColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${redColour}"                              Tokens Tinfoleak                                "${endColour}
+        echo -e ${redColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "A partir de tu cuenta de Twitter tienes que acceder a https://apps.twitter.com/ y hacer clic en «Create New App»."${endColour}
+	echo -e "\n" 
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Rellena los campos obligatorios y acepta las condiciones."${endColour}
+	echo -e "\n"
+	echo -e ${purpleColour}"[~]"${endColour}${whiteColour} "Una vez creada la aplicación, ves al apartado «Keys and Access Tokens» y ves abajo del todo para crear los «access token»." ${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"[~]"${endColour}${whiteColour} "¿Entendido?" ${endColour}
+	echo -e ${redColour}"[1] Sí, vamos a ello"${endColour}
+	echo -e ${redColour}"[2] No me queda claro"${endColour}
+	echo -e ${redColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_tinfo_tokens
+
+	case "$m_tinfo_tokens" in
+
+		1) tinfoleak;;
+		2) echo -e "Toda la información en https://github.com/vaguileradiaz/tinfoleak";;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac	
+}
+
+
+function webscraper()
+{
+	echo -e ${yellowColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${yellowColour}"                                 WebScrape                                    "${endColour}
+        echo -e ${yellowColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Listo, vamos a ello..\n"${endColour}
+	sudo webscrape/./webscrape.sh 
+	
+		
+}
+
+
+function cloudfail()
+{
+	echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${turquoiseColour}"                                  Cloudfail                                   "${endColour}
+        echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	pip3 install -r CloudFail/requeriments.txt > /dev/null 2>&1
+	echo -e "\n"
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Listo, aquí tienes el panel de ayuda.\n"${endColour}
+	echo -e ${whiteColour}"cloudfail.py [-h] [-t OBJETIVO] [-T] [-u] [-s SUBDOMINIOS]\n"${endColour}
+	echo -e	${whiteColour} "Opciones:" ${endColour}
+	echo -e " -h, --help     (mostrar el mensaje de ayuda y salir)"
+	echo -e " -t OBJETIVO, --target OBJETIVO"
+        echo -e " 	         El objetivo puede ser una url también"
+	echo -e " -T, --tor      (habilita el enrutamiento TOR)"
+	echo -e " -u, --update   (actualiza las bases de datos)"
+	echo -e " -s SUBDOMINIOS, --subdomains SUBDOMINIOS"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${turquoiseColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${turquoiseColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${turquoiseColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_cloudfail
+
+	case "$m_cloudfail" in
+
+		1) gnome-terminal --window -- bash -c "cd CloudFail; exec bash";;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+
+function dmitry()
+{
+	echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${turquoiseColour}"                                     Dmitry                                   "${endColour}
+        echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${whiteColour}"Uso:"${endColour}
+	echo -e ${whiteColour}"dmitry [-winsepfb] [-t 0-9] [-o %host.txt] host"${endColour}
+	echo -e "\t""-o Guardar la salida a %host.txt o al archivo especificado por -o file"
+	echo -e "\t""-i Realizar una búsqueda whois en la dirección IP de un host"
+  	echo -e "\t""-w Realizar una búsqueda whois en el nombre de dominio de un host"
+	echo -e "\t""-n Recuperar información de Netcraft.com en un host"
+	echo -e "\t""-s Realizar una búsqueda de posibles subdominios"
+	echo -e "\t""-e Realizar una búsqueda de posibles direcciones de correo electrónico"
+	echo -e "\t""-p Realizar un análisis del puerto TCP en un host"
+	echo -e "\t""* -f Realizar un análisis del puerto TCP en un host que muestra la salida informando de puertos filtrados"
+	echo -e "\t""* -b Leer en el banner recibido del puerto escaneado"
+	echo -e "\t""* -t 0-9 Ajuste el TTL en segundos al escanear un puerto TCP ( Default 2 )"
+	echo -e "\n"
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'dmitry -win campusciberseguridad.com'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${turquoiseColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${turquoiseColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${turquoiseColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_dmitry
+
+	case "$m_dmitry" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+
+function dnsrecon()
+{
+	echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${turquoiseColour}"                                  DNSRecon                                    "${endColour}
+        echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Listo, aquí tienes el panel de ayuda.\n"${endColour}
+	python3 dnsrecon/dnsrecon.py -h
+	echo -e "\n"
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'python3 dnsrecon.py -d campusciberseguridad.com -a'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${turquoiseColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${turquoiseColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${turquoiseColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_dnsrecon
+
+	case "$m_dnsrecon" in
+
+		1) gnome-terminal --window -- bash -c "cd dnsrecon; exec bash";;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+
+function domainfy()
+{
+	echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${turquoiseColour}"                            OSRFramework - Domainfy                           "${endColour}
+        echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${whiteColour}"Uso:"${endColour}
+	echo -e ${whiteColour} "domainfy.py"${endColour}
+	echo -e   "(-n <usuario> [<usuario> ...] | -N <archivo_usuarios> | --license) [-e <sum_ext> [<sum_ext> ...]]"
+        echo -e   "[-o <ruta_de_la_carpeta_output>] [-t <tld_type> [<tld_type> ...]] [-u <nuevo_tld> [<nuevo_tld> ...]]"
+        echo -e   "[-x <dominio> [<dominio> ...]] [-F <archivo_cabeceras>] [-T <num_threads>] [-quiet] [-whois] [-h] [-versión]"
+	echo -e ${whiteColour} "Donde '-n' o '-N' son obligatorios para ejecutar domainfy"${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'domainfy.py -n ciberseguridad'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${turquoiseColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${turquoiseColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${turquoiseColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_domainfy
+
+	case "$m_domainfy" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+function theharvester()
+{
+	echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${turquoiseColour}"                                TheHarvester                                  "${endColour}
+        echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	echo -e "\n"
+	cd theHarvester
+	pip3 install -r requirements.txt > /dev/null 2>&1
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Listo, aquí tienes el panel de ayuda.\n"${endColour}
+	python3 theHarvester.py -h
+	echo -e "\n"
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'python3 theHarvester.py -d campusciberseguridad.com -l 200 -b bing'"
+	echo -e "\n"
+	cd ..
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${turquoiseColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${turquoiseColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${turquoiseColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_theHarvester
+
+	case "$m_theHarvester" in
+
+		1) gnome-terminal --window -- bash -c "cd theHarvester; exec bash";;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+
+function alias_generator()
+{
+	echo -e ${lightgreenColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${lightgreenColour}"                         OSRFramework - Alias_generator                       "${endColour}
+        echo -e ${lightgreenColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${whiteColour}"Uso:"${endColour}
+	alias_generator.py --help
+	echo -e "\t" " "
+	echo -e "\t" " "
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'sudo alias_generator.py -n clara -C Andorra'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${lightgreenColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${lightgreenColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${lightgreenColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_alias_generator
+
+	case "$m_alias_generator" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+
+function searchfy()
+{
+	echo -e ${lightgreenColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${lightgreenColour}"                            OSRFramework - Searchfy                           "${endColour}
+        echo -e ${lightgreenColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${whiteColour}"Uso:"${endColour}
+	searchfy.py --help
+	echo -e "\t" " "
+	echo -e "\t" " "
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'sudo searchfy.py -q cl4r4-5 -p github'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${lightgreenColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${lightgreenColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${lightgreenColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_searchfy
+
+	case "$m_searchfy" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+function sherlock()
+{
+	echo -e ${lightgreenColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${lightgreenColour}"                                  Sherlock                                    "${endColour}
+        echo -e ${lightgreenColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	echo -e "\n"
+	pip3 install -r sherlock/requirements.txt > /dev/null 2>&1
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Listo, aquí tienes el panel de ayuda.\n"${endColour}
+	python3 sherlock/sherlock -h
+	echo -e "\n"
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'python3 sherlock cl4r4-5'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${lightgreenColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${lightgreenColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${lightgreenColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_sherlock
+
+	case "$m_sherlock" in
+
+		1) gnome-terminal --window -- bash -c "cd sherlock; exec bash";;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+
+function exiftool()
+{
+	echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${blueColour}"                                    Exiftool                                  "${endColour}
+        echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${whiteColour}"Uso:"${endColour}
+	echo -e ${whiteColour}"exiftool [archivo][ruta_archivo]"${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'exiftool foto_1.png'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${blueColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${blueColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${blueColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_exiftool
+
+	case "$m_exiftool" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+function mediainfo()
+{
+	echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${blueColour}"                                    MediaInfo                                 "${endColour}
+        echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${whiteColour}"Uso:"${endColour}
+	echo -e ${whiteColour}"mediainfo [archivo][ruta_archivo]"${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'mediainfo video.mp4'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${blueColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${blueColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${blueColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_mediainfo
+
+	case "$m_mediainfo" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+function instaloader()
+{
+	echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${turquoiseColour}"                                  Instaloader                                 "${endColour}
+        echo -e ${turquoiseColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Listo, aquí tienes el panel de ayuda.\n"${endColour}
+	echo -e ${whiteColour}"instaloader"${endColour}
+	echo -e "\t [--comments] [--geotags]"
+        echo -e "\t [--stories] [--highlights] [--tagged] [--igtv]"
+        echo -e "\t [--login YOUR-USERNAME] [--fast-update]"
+        echo -e "\t profile | "#hashtag" | %location_id | :stories | :feed | :saved"
+	echo -e "\t instaloader --help"
+	echo -e "\n"
+	echo -e "Especifique una lista de destinos. Para cada uno de ellos, Instaloader crea una carpeta y descarga todos los mensajes." 
+	echo -e "La documentación completa se puede encontrar en https://instaloader.github.io/."	
+	echo -e "\n"
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'instaloader -igtv geeks_for_geeks'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${turquoiseColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${turquoiseColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${turquoiseColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_instaloader
+
+	case "$m_instaloader" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+
+function phonefy()
+{
+	echo -e ${redColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${redColour}"                            OSRFramework - Phonefy                            "${endColour}
+        echo -e ${redColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${whiteColour}"Uso:"${endColour}
+	phonefy.py --help
+	echo -e "\t" " "
+	echo -e "\t" " "
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'phonefy.py -n 0034983390716'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${lightgreenColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${lightgreenColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${lightgreenColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_phonefy
+
+	case "$m_phonefy" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+
+function usufy()
+{
+	echo -e ${lightgreenColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${lightgreenColour}"                              OSRFramework - Usufy                            "${endColour}
+        echo -e ${lightgreenColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${whiteColour}"Uso:"${endColour}
+	usufy.py --help
+	echo -e "\t" " "
+	echo -e "\t" " "
+	echo -e ${greenColour}"Ejemplo:"${endColour} "'usufy.py -n cl4r4_5 -p twitter'"
+	echo -e "\n"
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${lightgreenColour}"[1] Usar la herramienta"${endColour}
+	echo -e ${lightgreenColour}"[2] Volver al Menú Principal"${endColour}
+	echo -e ${lightgreenColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_usufy
+
+	case "$m_usufy" in
+
+		1) gnome-terminal --window -- bash;;
+		2) main_menu;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+
+}
+
+
+function elasticsearch()
+{
+	echo -e ${yellowColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${yellowColour}"                                 Elasticsearch                                   "${endColour}
+        echo -e ${yellowColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	systemctl start elasticsearch 
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Activado, vamos a ello..\n"${endColour}
+	echo -e ${grayColour} "Abre el navegador que desees y selecciona el marcador 'Elasticsearch'\n"${endColour}
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${turquoiseColour}"[1] Activar Kibana"${endColour}
+	echo -e ${turquoiseColour}"[2] Desactivar Elasticsearch"${endColour}
+	echo -e ${turquoiseColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_elasticsearch
+
+	case "$m_elasticsearch" in
+
+		1) kibana;;
+		2) systemctl stop elasticsearch;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+}
+
+
+function kibana()
+{
+	echo -e ${yellowColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${yellowColour}"                                   Kibana                                     "${endColour}
+        echo -e ${yellowColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	systemctl start kibana 
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	echo -e "\n"
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Activado, vamos a ello..\n"${endColour}
+	echo -e ${grayColour} "Abre el navegador que desees y selecciona el marcador 'Kibana'\n"${endColour}
+	echo -e ${whiteColour}"¿Listo? ¿Qué quieres hacer ahora?"${endColour}
+	echo -e ${turquoiseColour}"[1] Activar Elasticsearch"${endColour}
+	echo -e ${turquoiseColour}"[2] Desactivar Kibana"${endColour}
+	echo -e ${turquoiseColour}"[3] Salir"${endColour}
+	echo -e ${whiteColour}"Elija su opción [1-3]: "${endColour}
+	read m_kibana
+
+	case "$m_kibana" in
+
+		1) elasticsearch;;
+		2) systemctl stop kibana;;
+		3) exit;;
+		*) echo -e ${redColour}"[X]"${endColour}${brownColour} "Error ${redColour}404 ${endColour} - Selecciona la opción correcta"${endColour};
+		   echo "Presiona ENTER para continuar..." ; read ;;
+	esac
+}
+
+
+function malt()
+{
+	echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${blueColour}"                                  Maltego                                     "${endColour}
+        echo -e ${blueColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	gnome-terminal --window -- bash -c "maltego; exec bash"
+	echo -e "\n"
+	exit
+}
+
+function se_toolkit()
+{
+	echo -e ${yellowColour}"------------------------------------------------------------------------------"${endColour}
+        echo -e ${yellowColour}"                                 SE Toolkit                                   "${endColour}
+        echo -e ${yellowColour}"------------------------------------------------------------------------------"${endColour}
+	echo -e "\n"
+	echo -e ${redColour}"[~]"${endColour}${whiteColour} "Se está preparando la herramienta."${endColour}
+	echo -e "\n"
+	echo -e ${yellowColour}"[~]"${endColour}${whiteColour} "Hay que ser paciente."${endColour}
+	echo -e "\n"
+	pip3 install -r setoolkit/requirements.txt > /dev/null 2>&1
+	sudo python3 setoolkit/setup.py > /dev/null 2>&1
+	echo -e ${greenColour}"[${tick}]"${endColour}${grayColour} "Listo, vamos a ello..\n"${endColour}
+	sudo setoolkit
+		
+}
+
+
+
+
+function panelayuda() {
+
+        echo -e "${grayColour}===============================================================${endColour}"
+	echo -e "${yellowColour}  Panel de Ayuda ${endColour}"
+        echo -e "${yellowColour}   [*]${endColour}${grayColour} Usa: sudo ./OriON${endColour}"
+        echo -e "${grayColour}===============================================================${endColour}"
+        echo ' ' 
+        exit 0
+}
+
+if [ "$(id -u)" == "0" ]; then
+	main_menu
+	
+else
+        echo -e ${redColour}"\n[${cross}]"${endColour}${grayColour}"No eres ROOT \n"${endColour}
+        panelayuda
+fi
+
+
+
