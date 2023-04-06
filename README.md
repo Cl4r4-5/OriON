@@ -13,22 +13,45 @@ Esta '.ovf' tiene integradas distintas herramientas para investigaciones de reco
 
 ## Navegadores
 
-Dispone de **3 navegadores distintos (Chrome, Firefox y Tor)** con sus respectivos marcadores y extensiones web.
-Los marcadores de los navegadores están categorizados en: correos, dominios, geolocalización, IP, identidad, multimedia, navegadores, redes sociales, teléfonos y usuarios.
+Dispone de **3 navegadores distintos (Chrome, Firefox y Tor)** con sus respectivos marcadores y extensiones web. Los marcadores de los navegadores están categorizados: 
+- Correos
+- Dominios
+- Geolocalización
+- Google
+- Identidad
+- IP
+- Mozilla Firefox
+- Multimedia
+- Navegadores
+  -	Generales
+  - Deep Web
+- Redes sociales
+  - Twitter
+  -	Instagram
+  -	Facebook
+  -	YouTube 
+  -	Otras
+- Teléfonos
+- Tor Project
+- Usuarios
+
 
 ## Herramientas
 
 A su vez dispone de **herrramientas de aplicación** para el investigador: 
 - Audacity
+- Evince
 - Google Earth
-- KeePassxc
-- Notepad++
 - HTTrack
+- KeePassxc
+- Maltego
+- Notepad++
+- Terminator
+- VLC
 - Xmind
 - Entre otras.
 
 ![herramientas](https://user-images.githubusercontent.com/127757371/230437330-abdbce8c-4d81-420b-9efb-48870c82d6eb.png)
-
 
 Finalmente, tiene una diversidad de herramientas instaladas, las cuáles se pueden ejecutar directamente desde la línea de comandos.
 De hecho, para facilitar el uso de estas herramientas, la máquina dispone de un **script**, llamado **'OriON'** en la ruta /home/orion/Escritorio/Herramientas, para facilitar la ejecución de las mismas.
@@ -42,19 +65,33 @@ De hecho, para facilitar el uso de estas herramientas, la máquina dispone de un
 ![script_1](https://user-images.githubusercontent.com/127757371/230437407-ef1847f3-7b88-4976-9845-436e778ed669.png)
 
 
-Algunas **herramientas** son:
-- OSRFramework
-- TheHarvester
-- Tinfoleak
-- Instaloader
-- Dmitry
-- CloudFail
-- Sherlock
-- Exiftool
-- Maltego
-- Elasticsearch y Kibana
-- Entre otras.
-
+Las **herramientas** son:
+- **Alias_generator**: genera apodos basados en información conocida sobre el objetivo.
+- **Checkfy**: adivina posibles correos electrónicos basados en una lista de apodos.
+- **CloudFail**: encuentra IP ocultas detrás de la red CloudFlare.
+- **Dmitry**: recopila información de fuentes públicas de dominios y direcciones IP.
+- **DNSRecon**: descubre información sobre hosts y redes a través de consultas de DNS.
+- **Domainfy**: encuentra dominios que se resuelven usando una palabra o apodo.
+- **Elasticsearch**: motor de búsqueda y análisis de datos.
+- **EO-Ripper**: hace OSINT a un email o a una lista de emails.
+- **Exiftool**: extrae metadatos de imágenes, archivos o documentos.
+- **Instaloader**: permite descargas de cualquier dato de Instagram.
+- **Kibana**: visualización de datos.
+- **Mailfy**: encuentra más información sobre los correos electrónicos.
+- **Maltego**: análisis de datos.
+- **MediaInfo**: extrae metadatos de archivos multimedia: áudio o vídeo.
+- **Phonefy**: recupera información sobre teléfonos móviles.
+- **ProtOSINT**: investiga cuentas de ProtonMail y direcciones IP vinculadas a ProtonVPN.
+- **SE Toolkit**: ingeniería social.
+- **Searchfy**: encuentra perfiles vinculados a un nombre completo.
+- **Sherlock**: busca cuentas en gran multitud de redes sociales por nombre de usuario.
+- **SpiderFoot**: recopila y analiza datos.
+- **TheHarvester**: recolecta diversa información a través de un dominio.
+- **Tinfoleak**: análisis de información pública de Twitter.
+- **Usufy**: identifica perfiles de redes sociales usando un apodo.
+- **WebScrape**: recoge correos y números de teléfono de páginas web.
+	   
+     
 ![script_2](https://user-images.githubusercontent.com/127757371/230437445-7b505fbc-e1df-4ee3-a283-43abd3b900d1.png)
 
 
