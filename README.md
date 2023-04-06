@@ -60,7 +60,12 @@ Algunas **herramientas** son:
 
 # DESCARGA
 
-Para poder empezar a usarla, solo queda descargarla: 
+Para empezar a usarla, solo queda descargarla: 
+
+https://mega.nz/folder/VmpXSaKT#GUNthBlNqK63LbUR4fvByw
+
+![mega](https://user-images.githubusercontent.com/127757371/230450537-97adec18-9f5d-42e4-8e37-c45e32778293.png)
+
 
 ### *Espero que la podáis disfrutar tanto como yo he disfrutado haciéndola.*
 
