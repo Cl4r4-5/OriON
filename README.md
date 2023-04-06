@@ -1,3 +1,5 @@
+OriON
+
 OriON es una màquina virtual basada en Linux Ubuntu 22.10.
 
 Esta '.ovf' tiene integradas distintas herramientas para investigaciones de recopilación de información en fuentes abiertas (OSINT) sobre personas.
@@ -9,3 +11,6 @@ A su vez dispone de herrramientas de aplicación para el investigador: Audacity,
 
 Finalmente, tiene una diversidad de herramientas instaladas, las cuáles se pueden ejecutar directamente desde la línea de comandos.
 De hecho, para facilitar el uso de estas herramientas, la máquina dispone de un script, llamado 'OriON' en la ruta /home/orion/Escritorio/Herramientas, para facilitar la ejecución de las mismas.
+
+DESCARGA
+
