@@ -8,7 +8,8 @@ OriON es una màquina virtual basada en Linux Ubuntu 22.10.
 
 Esta '.ovf' tiene integradas distintas herramientas para investigaciones de recopilación de información en fuentes abiertas (OSINT) sobre personas.
 
-![escritorio](https://user-images.githubusercontent.com/127757371/230434304-f75c6877-d462-473c-a07a-9f342c526975.png)
+![escritorio](https://user-images.githubusercontent.com/127757371/230437351-fc667497-6a14-49fc-a1b0-a9a52cdc2e0d.png)
+
 
 ## Navegadores
 
@@ -26,7 +27,8 @@ A su vez dispone de **herrramientas de aplicación** para el investigador:
 - Xmind
 - Entre otras.
 
-![herramientas](https://user-images.githubusercontent.com/127757371/230430239-12cb8321-f042-4d87-8a6c-6a7ca11558f6.png)
+![herramientas](https://user-images.githubusercontent.com/127757371/230437330-abdbce8c-4d81-420b-9efb-48870c82d6eb.png)
+
 
 Finalmente, tiene una diversidad de herramientas instaladas, las cuáles se pueden ejecutar directamente desde la línea de comandos.
 De hecho, para facilitar el uso de estas herramientas, la máquina dispone de un **script**, llamado **'OriON'** en la ruta /home/orion/Escritorio/Herramientas, para facilitar la ejecución de las mismas.
@@ -36,6 +38,8 @@ De hecho, para facilitar el uso de estas herramientas, la máquina dispone de un
 ```cd /Escritorio/Herramientas```
 
 ```sudo ./OriON```
+
+![script_1](https://user-images.githubusercontent.com/127757371/230437407-ef1847f3-7b88-4976-9845-436e778ed669.png)
 
 
 Algunas **herramientas** son:
@@ -51,9 +55,7 @@ Algunas **herramientas** son:
 - Elasticsearch y Kibana
 - Entre otras.
 
-
-
-![script](https://user-images.githubusercontent.com/127757371/230430307-86ad98bb-493b-455e-884e-2c8afd79b377.png)
+![script_2](https://user-images.githubusercontent.com/127757371/230437445-7b505fbc-e1df-4ee3-a283-43abd3b900d1.png)
 
 
 # DESCARGA
