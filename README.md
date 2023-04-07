@@ -4,7 +4,7 @@
 
 # **OriON**
 
-OriON es una màquina virtual basada en Linux Ubuntu 22.10.
+OriON es una maquina virtual basada en Linux Ubuntu 22.10.
 
 Esta '.ovf' tiene integradas distintas herramientas para investigaciones de recopilación de información en fuentes abiertas (OSINT) sobre personas.
 
