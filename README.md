@@ -100,11 +100,12 @@ Las **herramientas** son:
 **Importante**:
 
 Como buen investigador OSINT, es necesario hacer uso de alguna VPN. En la distribución no se ofrece ninguna en específico porque eso suele ser elección del analista. De todos modos, a continuación se ofrecen 5 opciones distintas:
-1. ExpressVPN : es de las más populares del mercado, tiene con una aplicación oficial para Linux y dispone de una gran cantidad de opciones de configuración avanzadas para usuarios más técnicos.
-2. NordVPN : tiene una reputación sólida en cuanto a privacidad y seguridad, también tiene una aplicación oficial para Linux y cuenta con una opción de doble VPN que añade una capa adicional de seguridad.
-3. ProtonVPN : se basa en la privacidad y seguridad y cuenta con un plan gratuito limitado para aquellos que quieran probar el servicio.
-4. CyberGhost : Tiene una gran cantidad de opciones de configuración, incluyendo un modo de privacidad para proteger aún más su identidad en línea.
-5. Mullvad : se centra en mantener la privacidad del usuario al máximo, incluyendo la opción de pagar con criptomonedas.
+
+- **ExpressVPN:** es de las más populares del mercado, tiene con una aplicación oficial para Linux y dispone de una gran cantidad de opciones de configuración avanzadas para usuarios más técnicos.
+- **NordVPN:** tiene una reputación sólida en cuanto a privacidad y seguridad, también tiene una aplicación oficial para Linux y cuenta con una opción de doble VPN que añade una capa adicional de seguridad.
+- **ProtonVPN:** se basa en la privacidad y seguridad y cuenta con un plan gratuito limitado para aquellos que quieran probar el servicio.
+- **CyberGhost:** Tiene una gran cantidad de opciones de configuración, incluyendo un modo de privacidad para proteger aún más su identidad en línea.
+- **Mullvad:** se centra en mantener la privacidad del usuario al máximo, incluyendo la opción de pagar con criptomonedas.
 
 **Ahora sí:** Para empezar a usarla, solo queda descargarla: 
 
@@ -118,6 +119,7 @@ https://mega.nz/folder/VmpXSaKT#GUNthBlNqK63LbUR4fvByw
 En el siguiente enlace se ofrece un víedo demostrativo de la distribución:
 https://youtu.be/rTYlaGtA2tE
 
+![youtube](https://user-images.githubusercontent.com/127757371/230694424-be998770-8cc3-4b5e-aca3-17bcd337f430.png)
 
 
 ### *Espero que la podáis disfrutar tanto como yo he disfrutado haciéndola.*
