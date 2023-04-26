@@ -119,7 +119,7 @@ https://mega.nz/folder/VmpXSaKT#GUNthBlNqK63LbUR4fvByw
 
 # DEMOSTRACIÓN
 
-En el siguiente enlace se ofrece un víedo demostrativo de la distribución:
+En el siguiente enlace se ofrece un vídeo demostrativo de la distribución:
 https://youtu.be/rTYlaGtA2tE
 
 ![youtube](https://user-images.githubusercontent.com/127757371/230694424-be998770-8cc3-4b5e-aca3-17bcd337f430.png)
