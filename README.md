@@ -4,7 +4,7 @@
 
 # **OriON**
 
-OriON es una maquina virtual basada en Linux Ubuntu 22.10.
+OriON es una máquina virtual basada en Linux Ubuntu 22.10.
 
 Esta '.ovf' tiene integradas distintas herramientas para investigaciones de recopilación de información en fuentes abiertas (OSINT) sobre personas.
 
@@ -79,7 +79,7 @@ Las **herramientas** son:
 - **Kibana**: visualización de datos.
 - **Mailfy**: encuentra más información sobre los correos electrónicos.
 - **Maltego**: análisis de datos.
-- **MediaInfo**: extrae metadatos de archivos multimedia: áudio o vídeo.
+- **MediaInfo**: extrae metadatos de archivos multimedia: audio o vídeo.
 - **Phonefy**: recupera información sobre teléfonos móviles.
 - **ProtOSINT**: investiga cuentas de ProtonMail y direcciones IP vinculadas a ProtonVPN.
 - **SE Toolkit**: ingeniería social.
