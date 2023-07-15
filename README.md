@@ -111,7 +111,7 @@ Como buen investigador OSINT, es necesario hacer uso de alguna VPN. En la distri
 
 **Enlace a Mega:** *https://mega.nz/folder/VmpXSaKT#GUNthBlNqK63LbUR4fvByw*
 
-**Enlace a OneDrive:** *https://1drv.ms/f/s!Aszpl7MVvmNGkivhl5yPxR2izuZY?e=ImHwI4*
+**Enlace a OneDrive:** *https://1drv.ms/f/s!Aszpl7MVvmNGkivhl5yPxR2izuZY*
 
 - **Usuario:** orion
 - **Contraseña:** orion
