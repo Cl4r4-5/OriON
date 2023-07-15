@@ -110,6 +110,7 @@ Como buen investigador OSINT, es necesario hacer uso de alguna VPN. En la distri
 **Ahora sí:** Para empezar a usarla, solo queda descargarla: 
 
 **Enlace a Mega:** *https://mega.nz/folder/VmpXSaKT#GUNthBlNqK63LbUR4fvByw*
+
 **Enlace a OneDrive:** *https://1drv.ms/f/s!Aszpl7MVvmNGkivhl5yPxR2izuZY?e=ImHwI4*
 
 - **Usuario:** orion
