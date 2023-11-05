@@ -1,4 +1,5 @@
-![logo](https://user-images.githubusercontent.com/127757371/230434041-be482582-7933-4f6b-9cfd-fdab7113fd89.png)
+
+![OriON_v2](https://github.com/Cl4r4-5/OriON/assets/127757371/782771b5-93e9-417b-ae60-ca1dc564244f)
 
 
 
