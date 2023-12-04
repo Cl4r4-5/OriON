@@ -5,7 +5,7 @@
 
 # **OriON**
 
-OriON es una máquina virtual basada en Linux Ubuntu 22.10.
+OriON v.2 es una máquina virtual basada en Linux Ubuntu 22.04.03.
 
 Esta '.ovf' tiene integradas distintas herramientas para investigaciones de recopilación de información en fuentes abiertas (OSINT) sobre personas.
 
@@ -14,27 +14,27 @@ Esta '.ovf' tiene integradas distintas herramientas para investigaciones de reco
 
 ## Navegadores
 
-Dispone de **3 navegadores distintos (Chrome, Firefox y Tor)** con sus respectivos marcadores y extensiones web. Los marcadores de los navegadores están categorizados: 
-- Correos
-- Dominios
+Dispone de **3 navegadores distintos (Chrome, Firefox y Tor)** con sus respectivos marcadores y extensiones web. Los marcadores de los navegadores están categorizados por: 
+- Correo
+- Criptomonedas
+- Dominio / Páginas Web
 - Geolocalización
-- Google
 - Identidad
 - IP
-- Mozilla Firefox
 - Multimedia
 - Navegadores
-  -	Generales
+  - Generales: Google, Mozilla Firefox, etc.
   - Deep Web
-- Redes sociales
+- Otras
+- Redes sociales / Usuario
+  - Usuario
   - Twitter
-  -	Instagram
-  -	Facebook
-  -	YouTube 
-  -	Otras
-- Teléfonos
-- Tor Project
-- Usuarios
+  - Instagram
+  - Facebook
+  - TikTok
+  - YouTube
+  - Otras
+- Teléfono
 
 
 ## Herramientas
@@ -67,29 +67,30 @@ De hecho, para facilitar el uso de estas herramientas, la máquina dispone de un
 
 
 Las **herramientas** son:
-- **Alias_generator**: genera apodos basados en información conocida sobre el objetivo.
-- **Checkfy**: adivina posibles correos electrónicos basados en una lista de apodos.
 - **CloudFail**: encuentra IP ocultas detrás de la red CloudFlare.
+- **Crosslinked**: recopila información de perfiles de LinkedIn.
+- **DaProfiler**: recopila información de perfiles en redes sociales y en la web a través de nombres.
 - **Dmitry**: recopila información de fuentes públicas de dominios y direcciones IP.
 - **DNSRecon**: descubre información sobre hosts y redes a través de consultas de DNS.
-- **Domainfy**: encuentra dominios que se resuelven usando una palabra o apodo.
-- **Elasticsearch**: motor de búsqueda y análisis de datos.
 - **EO-Ripper**: hace OSINT a un email o a una lista de emails.
 - **Exiftool**: extrae metadatos de imágenes, archivos o documentos.
+- **InstagramOSINT**: recopila información de perfiles de Instagram.
 - **Instaloader**: permite descargas de cualquier dato de Instagram.
-- **Kibana**: visualización de datos.
-- **Mailfy**: encuentra más información sobre los correos electrónicos.
 - **Maltego**: análisis de datos.
 - **MediaInfo**: extrae metadatos de archivos multimedia: audio o vídeo.
-- **Phonefy**: recupera información sobre teléfonos móviles.
+- **NetSoc OSINT**: recopila datos de Instagram, TikTok, Twitter, Twitch, Telegram y GitHub.
+- **Photon**: extrae URLs, subdominios y archivos de una página web y realiza búsquedas en motores de búsqueda.
+- **Osintgram**: recopila información de perfiles de Instagram.
+- **OSRFramework**: colección de herramientas para la recopilación de OSINT.
 - **ProtOSINT**: investiga cuentas de ProtonMail y direcciones IP vinculadas a ProtonVPN.
-- **SE Toolkit**: ingeniería social.
-- **Searchfy**: encuentra perfiles vinculados a un nombre completo.
 - **Sherlock**: busca cuentas en gran multitud de redes sociales por nombre de usuario.
+- **Shodan**: motor de búsqueda especializado que permite buscar dispositivos conectados a Internet.
 - **SpiderFoot**: recopila y analiza datos.
+- **Sublist3r**: recopila y analiza datos.
+- **Th3inspector**: recopilación sobre páginas webs, dominios, IP, correos, teléfonos, etc.
 - **TheHarvester**: recolecta diversa información a través de un dominio.
 - **Tinfoleak**: análisis de información pública de Twitter.
-- **Usufy**: identifica perfiles de redes sociales usando un apodo.
+- **Uscrapper**: recoge información de páginas web (correos, nombres, teléfonos, enlaces, etc.).
 - **WebScrape**: recoge correos y números de teléfono de páginas web.
 	   
      
