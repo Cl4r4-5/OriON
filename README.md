@@ -1,40 +1,54 @@
 
 ![OriON_v2](https://github.com/Cl4r4-5/OriON/assets/127757371/782771b5-93e9-417b-ae60-ca1dc564244f)
 
-
+EN BREVES PUBLICO LA VERSIÓN DOS DE ORION...Aquí tenéis una previa de lo que viene
 
 # **OriON**
 
-OriON v.2 es una máquina virtual basada en Linux Ubuntu 22.04.03.
+OriON v.2 es una distribución basada en Linux Ubuntu 22.04.03. Esta '.ovf' tiene integradas distintas herramientas para investigaciones de recopilación de información en fuentes abiertas (OSINT) sobre personas.
 
-Esta '.ovf' tiene integradas distintas herramientas para investigaciones de recopilación de información en fuentes abiertas (OSINT) sobre personas.
+![OriON_Escritorio](https://github.com/Cl4r4-5/OriON/assets/127757371/ff7b7583-c159-41eb-a30d-d9dc7366a942)
 
-![escritorio](https://user-images.githubusercontent.com/127757371/230437351-fc667497-6a14-49fc-a1b0-a9a52cdc2e0d.png)
 
 
 ## Navegadores
 
-Dispone de **3 navegadores distintos (Chrome, Firefox y Tor)** con sus respectivos marcadores y extensiones web. Los marcadores de los navegadores están categorizados por: 
-- Correo
-- Criptomonedas
-- Dominio / Páginas Web
-- Geolocalización
-- Identidad
-- IP
-- Multimedia
-- Navegadores
-  - Generales: Google, Mozilla Firefox, etc.
-  - Deep Web
-- Otras
-- Redes sociales / Usuario
-  - Usuario
-  - Twitter
-  - Instagram
-  - Facebook
-  - TikTok
-  - YouTube
-  - Otras
-- Teléfono
+Dispone de **3 navegadores distintos (Chrome, Firefox y Tor)** con sus respectivos marcadores y extensiones web categorizados: 
+- **Correo:**
+	- Castrick, DeHashed, Email Header Analyzer, Have I Been Pwned, Hunter, GhostProject, LeakCheck, OSINT Industries, Skymem, Verify Email Addresses, VoilaNorbert.
+- **Criptomonedas:**
+	- Blockchain, Chainalysis, Etherscan, Mempool.
+- **Dominio / Páginas Web:**
+	- CachedView, Centralops, Desenmascara, DNSlytics, DomainTools Whois, ExpandURL, HTTrack, ICANN Lookup, IntelX, Internet Archive, Netcraft, PDY my URL, Robtex, urlscan, URLVoid, ViewDNS.info, Whois Request, Who Is Hosting This?
+- **Geolocalización:**
+	- Balizas Digitales, Canary Tokens, Flight Aware, Flightera, Flightradar, Geolocation Estimation, IP2Location, Maps, Rastreador de Buques, SunCalc.
+- **Identidad:**
+	- DNI (BOE, Boletines oficiales de las CCAA), Intelius, librebor.me, Pipl, ScamDigger, Spokeo, ThatsThem.
+- **IP:**
+	- AbuseIPDB, Censys Search, Criminal IP, DNSdumpster, IP Address Lookup, IPVoid, RIPE, Scamalytics.
+- **Multimedia:**
+	- Bing Visual Search, CarNet.AI, Diff Checker, Exif Info, FaceCheck, Forensically, Imageforensic.org, Imágenes de Google, TinEye Reverse Image Search, Yandex Images.
+- **Navegadores:**
+  	- Google.
+  	- Mozilla. 
+  	- Otros: All in One, Search All, Ahmia, Baidu, Bing, DuckDuckGo, eTools.ch, Gibiru, Qwant, Startpage, Yandex.
+- **Otras:**
+	-  *Certificaciones:* eGarante, Save The Proof.
+ 	-  *Creación de Mapas:* ArcGIS, QGIS, Xmind.
+  	-  *Eliminar Perfiles:* Cleanup.pictures, Just Delete Me.
+  	-  *Herramientas OSINT:* Cylect.io, OSINT Framework, OSINT Tools, Repositorio Ciberpatrulla.
+  	-  *UA Parser:* Parse a user Agent, User Agent Parser.
+  	-  Maltego, SpiderFoot, Shodan, ZoomEye. 
+- **Redes sociales / Usuario:**
+	- *Usuario:* KnowEm, Lullar, Namechk, UserSearch, WhatsMyName.
+ 	- *Twitter / X:* Descargar Videos, Hashtagify.me, Social Bearing, Tweet Archivist, TweetDeck, TweeterID, TwitterAudit, Twitonomy. 
+  	- *Instagram:* Picodash, downloadGram, StoriesIG.
+  	- *Facebook:* Download Facebook videos, StalkFace.
+  	- *TikTok:* Descargar TikTok.
+  	- *YouTube:* y2mate.
+  	- Comment Picker, Export Comments, Random Tools.
+- **Teléfono:**
+	- AbcTelefonos, IMEI Check, Infobel España, Numbering Plans, Páginas Blancas, Peoplecall, ¿Quién me llama?, Randommer, Sync.me, Truecaller, Teledigo, NumLookup.
 
 
 ## Herramientas
@@ -63,7 +77,6 @@ De hecho, para facilitar el uso de estas herramientas, la máquina dispone de un
 
 ```sudo ./OriON```
 
-![script_1](https://user-images.githubusercontent.com/127757371/230437407-ef1847f3-7b88-4976-9845-436e778ed669.png)
 
 
 Las **herramientas** son:
@@ -93,9 +106,6 @@ Las **herramientas** son:
 - **Uscrapper**: recoge información de páginas web (correos, nombres, teléfonos, enlaces, etc.).
 - **WebScrape**: recoge correos y números de teléfono de páginas web.
 	   
-     
-![script_2](https://user-images.githubusercontent.com/127757371/230437445-7b505fbc-e1df-4ee3-a283-43abd3b900d1.png)
-
 
 # DESCARGA
 
@@ -115,9 +125,10 @@ Como buen investigador OSINT, es necesario hacer uso de alguna VPN. En la distri
 
 **Enlace a OneDrive:** *https://1drv.ms/f/s!Aszpl7MVvmNGkivhl5yPxR2izuZY*
 
+Y LISTO
+
 - **Usuario:** orion
 - **Contraseña:** orion
-
 
 
 # DEMOSTRACIÓN
@@ -132,6 +143,6 @@ https://youtu.be/rTYlaGtA2tE
 
 # CONTACTO
 
-Para cualquier información o duda, podéis contactarme en:
-- Twitter: https://twitter.com/NebulosaOriON_
+Para cualquier información o duda, podéis contactarme a través de:
+- X: [https://twitter.com/NebulosaOriON_](https://twitter.com/NebulosaOriON_)
 
