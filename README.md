@@ -1,4 +1,4 @@
-# EN EDICIÓN... En breves se publica la V.2.
+# EN EDICIÓN Y MANTENIMIENTO...
 
 ![OriON_v2](https://github.com/Cl4r4-5/OriON/assets/127757371/782771b5-93e9-417b-ae60-ca1dc564244f)
 
