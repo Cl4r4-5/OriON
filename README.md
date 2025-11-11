@@ -3,7 +3,8 @@
 
 # **OriON**
 
-OriON v.2 es una distribución basada en Linux Ubuntu 22.04.03. Esta '.ovf' tiene integradas distintas herramientas para investigaciones de recopilación de información en fuentes abiertas (OSINT) sobre personas.
+OriON es una distribución basada en Linux Ubuntu 22.10. 
+Esta '.ovf' tiene integradas distintas herramientas para investigaciones de recopilación de información en fuentes abiertas (OSINT) sobre personas.
 
 ![OriON_Escritorio](https://github.com/Cl4r4-5/OriON/assets/127757371/ff7b7583-c159-41eb-a30d-d9dc7366a942)
 
@@ -14,8 +15,8 @@ OriON v.2 es una distribución basada en Linux Ubuntu 22.04.03. Esta '.ovf' tien
 Dispone de **3 navegadores distintos (Chrome, Firefox y Tor)** con sus respectivos marcadores y extensiones web categorizados: 
 - **Correo:**
 	- Castrick, DeHashed, Email Header Analyzer, Have I Been Pwned, Hunter, GhostProject, LeakCheck, OSINT Industries, Skymem, Verify Email Addresses, VoilaNorbert.
-- **Criptomonedas:**
-	- Blockchain, Chainalysis, Etherscan, Mempool.
+- **Criptomonedas (aunque no está disponible en su primera versión, es una categoría de especial interés):**
+	- Blockchain, Chainalysis, Etherscan, Mempool, BSCscan, TRONscan.
 - **Dominio / Páginas Web:**
 	- CachedView, Centralops, Desenmascara, DNSlytics, DomainTools Whois, ExpandURL, HTTrack, ICANN Lookup, IntelX, Internet Archive, Netcraft, PDY my URL, Robtex, urlscan, URLVoid, ViewDNS.info, Whois Request, Who Is Hosting This?
 - **Geolocalización:**
@@ -138,9 +139,4 @@ https://youtu.be/rTYlaGtA2tE
 
 
 ### *Espero que la podáis disfrutar tanto como yo he disfrutado haciéndola.*
-
-# CONTACTO
-
-Para cualquier información o duda, podéis contactarme a través de:
-- X: [https://twitter.com/NebulosaOriON_](https://twitter.com/NebulosaOriON_)
 
